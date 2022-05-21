@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/*=======================GERAL========================*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family:'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+* {
+    /*Existem diversos espaços entre parágrafos, títulos e tags especializadas que provocam gaps entre esses elementos. O que essa configuração global faz é tirar todos esses espaços*/
+    margin: 0px;
+    padding: 0px;
+}
+:root {
+    --first-color:hsl(265, 83%, 35%);
+    --second-color:hsl(282, 90%, 29%);
+    --third-color:hsl(247, 55%, 10%);
+    --fourth-color:hsl(232, 78%, 20%);
+    --fifth-color:hsl(186, 89%, 53%);
+    --sixth-color:hsl(282, 89%, 45%);
+
+    --fonte-padrao: Arial, Verdana, Helvetica, san-serife;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+body {
+    background-color: var(--second-color);
+    font-family: var(--fonte-padrao);  
+}
+
+a.externo::after {
+    content: "\1F517";
+}
+
+/*=====================HEADER====================*/
+header {
+    background-image: linear-gradient(to bottom, var(--first-color), var(--third-color));
+
+    min-height: 150px;
+    text-align: center;
+
+    padding-top: 40px;
+}
+
+header > h1 {
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    color:white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.81);
+    
+    margin-bottom: 20px;
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.399);
+
+    max-width: 500px;
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    margin: auto;
+}
+
+/*======================Navigation==================*/
+nav {
+    background-color: var(--third-color);
+
+    padding: 10px;
+    position: ;
+
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.155);
+}
+nav > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--fifth-color);
+    border-radius: 5px;
+
+    padding: 10px; 
+/*transition-durantion define ao tempo que leva para transicionar de um elemento para outro com, nesse caso, o passar do mouse*/
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    background-color: var(--first-color);
+}
+/*=====================MAIN=========================*/
+main {
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+
+    min-width: 300px;
+    max-width: 1000px;
+
+    padding: 20px;
+
+    margin: auto;
+    margin-bottom: 30px;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+    color: var(--third-color);
+
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--fourth-color);
+
+    background-image: linear-gradient(to right, var(--sixth-color), transparent);
+
+    padding: 4px 10px;
+}
+
+
+main p {
+    font-size: 1em;
+
+    margin: 15px 0px;
+
+    text-align: justify;
+    text-indent: 30px;
+
+    line-height: 2em;
+}
+
+strong {
+    font-weight: bold;
+    color: var(--fourth-color);
+}
+
+main a {
+    text-decoration: none;
+    font: var(--third-color);
+    font-weight: bold;
+
+    border-radius: 5px;
+    background-color: var(--fifth-color);
+
+    padding: 2px 2px;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+picture > img {
+    width: 100%;
+}
+
+article > img {
+    max-width: 350px;
+
+    display: block;
+
+    margin: auto;
+}
+
+div.video {
+    background-color: var(--third-color);
+
+    margin: 0 -20px 30px -20px;
+
+    padding: 20px;
+    padding-bottom: 57%;
+
+    position: relative;
+}
+
+div.video > iframe {
+    /*position:absolute desbloqueia top e left*/
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--fifth-color);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.299);
+    
+    padding: 10px;
+
+    border-radius: 10px;
+
+}
+
+aside > h3 {
+    background-color:var(--sixth-color);
+    color: white;
+
+    padding: 10px;
+    /*As margens negativas farão com que o h3 cresça para fora do aside para cima, para a direita e para a esquerda*/
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+aside > ul {
+    /*00A0 = NBSP (espaço sem quebra)
+    list-style-type não é compativel com todos os navegadores*/
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+/*====================Footer========================*/
+footer {
+    color: white;
+    background-image: linear-gradient(to right, var(--first-color), var(--third-color));
+
+    padding: 3px;
+
+    text-align: center;
+}
+
+footer a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+
+
